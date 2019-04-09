@@ -1,7 +1,7 @@
 defmodule GoogleApi.CloudTasks.V2.Mixfile do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "2.0.0"
 
   def project do
     [app: :google_api_cloud_tasks,
