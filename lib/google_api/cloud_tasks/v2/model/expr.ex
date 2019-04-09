@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.Expr do
+defmodule GoogleApi.CloudTasks.V2.Model.Expr do
   @moduledoc """
   Represents an expression text. Example:      title: \&quot;User account presence\&quot;     description: \&quot;Determines whether the request has a user account\&quot;     expression: \&quot;size(request.user) &gt; 0\&quot;
 
@@ -44,13 +44,13 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Expr do
   field(:"title")
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.Expr do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.Expr do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.Expr.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.Expr.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.Expr do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.Expr do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

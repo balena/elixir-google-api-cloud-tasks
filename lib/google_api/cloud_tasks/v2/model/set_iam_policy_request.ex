@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest do
+defmodule GoogleApi.CloudTasks.V2.Model.SetIamPolicyRequest do
   @moduledoc """
   Request message for &#x60;SetIamPolicy&#x60; method.
 
@@ -29,19 +29,19 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    :"policy" => GoogleApi.CloudTasks.V2beta2.Model.Policy.t()
+    :"policy" => GoogleApi.CloudTasks.V2.Model.Policy.t()
   }
 
-  field(:"policy", as: GoogleApi.CloudTasks.V2beta2.Model.Policy)
+  field(:"policy", as: GoogleApi.CloudTasks.V2.Model.Policy)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.SetIamPolicyRequest do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.SetIamPolicyRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.SetIamPolicyRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

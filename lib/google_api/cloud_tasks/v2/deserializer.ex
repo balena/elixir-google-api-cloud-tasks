@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Deserializer do
+defmodule GoogleApi.CloudTasks.V2.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models.
 

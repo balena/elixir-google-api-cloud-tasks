@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest do
+defmodule GoogleApi.CloudTasks.V2.Model.RunTaskRequest do
   @moduledoc """
   Request message for forcing a task to run now using RunTask.
 
@@ -36,13 +36,13 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest do
   field(:"responseView")
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.RunTaskRequest do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.RunTaskRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.RunTaskRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

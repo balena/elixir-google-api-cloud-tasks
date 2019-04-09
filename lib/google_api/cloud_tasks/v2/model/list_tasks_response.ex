@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse do
+defmodule GoogleApi.CloudTasks.V2.Model.ListTasksResponse do
   @moduledoc """
   Response message for listing tasks using ListTasks.
 
@@ -31,20 +31,20 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse do
 
   @type t :: %__MODULE__{
     :"nextPageToken" => any(),
-    :"tasks" => list(GoogleApi.CloudTasks.V2beta2.Model.Task.t())
+    :"tasks" => list(GoogleApi.CloudTasks.V2.Model.Task.t())
   }
 
   field(:"nextPageToken")
-  field(:"tasks", as: GoogleApi.CloudTasks.V2beta2.Model.Task, type: :list)
+  field(:"tasks", as: GoogleApi.CloudTasks.V2.Model.Task, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.ListTasksResponse do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.ListTasksResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.ListTasksResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

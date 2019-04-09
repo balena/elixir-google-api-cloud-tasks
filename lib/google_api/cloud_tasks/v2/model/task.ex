@@ -17,18 +17,21 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.Task do
+defmodule GoogleApi.CloudTasks.V2.Model.Task do
   @moduledoc """
   A unit of scheduled work.
 
   ## Attributes
 
-  - appEngineHttpRequest (AppEngineHttpRequest): App Engine HTTP request that is sent to the task&#39;s target. Can be set only if app_engine_http_target is set on the queue.  An App Engine task is a task that has AppEngineHttpRequest set. Defaults to: `null`.
-  - createTime (String.t): Output only. The time that the task was created.  &#x60;create_time&#x60; will be truncated to the nearest second. Defaults to: `null`.
-  - name (String.t): Optionally caller-specified in CreateTask.  The task name.  The task name must have the following format: &#x60;projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID&#x60;  * &#x60;PROJECT_ID&#x60; can contain letters ([A-Za-z]), numbers ([0-9]),    hyphens (-), colons (:), or periods (.).    For more information, see    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * &#x60;LOCATION_ID&#x60; is the canonical ID for the task&#39;s location.    The list of available locations can be obtained by calling    ListLocations.    For more information, see https://cloud.google.com/about/locations/. * &#x60;QUEUE_ID&#x60; can contain letters ([A-Za-z]), numbers ([0-9]), or   hyphens (-). The maximum length is 100 characters. * &#x60;TASK_ID&#x60; can contain only letters ([A-Za-z]), numbers ([0-9]),   hyphens (-), or underscores (_). The maximum length is 500 characters. Defaults to: `null`.
-  - pullMessage (PullMessage): LeaseTasks to process the task. Can be set only if pull_target is set on the queue.  A pull task is a task that has PullMessage set. Defaults to: `null`.
-  - scheduleTime (String.t): The time when the task is scheduled to be attempted.  For App Engine queues, this is when the task will be attempted or retried.  For pull queues, this is the time when the task is available to be leased; if a task is currently leased, this is the time when the current lease expires, that is, the time that the task was leased plus the lease_duration.  &#x60;schedule_time&#x60; will be truncated to the nearest microsecond. Defaults to: `null`.
-  - status (TaskStatus): Output only. The task status. Defaults to: `null`.
+  - appEngineHttpRequest (AppEngineHttpRequest): HTTP request that is sent to the App Engine app handler.  An App Engine task is a task that has AppEngineHttpRequest set. Defaults to: `null`.
+  - createTime (DateTime.t): Output only. The time that the task was created.  &#x60;create_time&#x60; will be truncated to the nearest second. Defaults to: `null`.
+  - dispatchCount (integer()): Output only. The number of attempts dispatched.  This count includes attempts which have been dispatched but haven&#39;t received a response. Defaults to: `null`.
+  - dispatchDeadline (String.t): The deadline for requests sent to the worker. If the worker does not respond by this deadline then the request is cancelled and the attempt is marked as a &#x60;DEADLINE_EXCEEDED&#x60; failure. Cloud Tasks will retry the task according to the RetryConfig.  Note that when the request is cancelled, Cloud Tasks will stop listing for the response, but whether the worker stops processing depends on the worker. For example, if the worker is stuck, it may not react to cancelled requests.  The default and maximum values depend on the type of request:   * For App Engine tasks, 0 indicates that the   request has the default deadline. The default deadline depends on the   [scaling   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)   of the service: 10 minutes for standard apps with automatic scaling, 24   hours for standard apps with manual and basic scaling, and 60 minutes for   flex apps. If the request deadline is set, it must be in the interval [15   seconds, 24 hours 15 seconds]. Regardless of the task&#39;s   &#x60;dispatch_deadline&#x60;, the app handler will not run for longer than than   the service&#39;s timeout. We recommend setting the &#x60;dispatch_deadline&#x60; to   at most a few seconds more than the app handler&#39;s timeout. For more   information see   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).  &#x60;dispatch_deadline&#x60; will be truncated to the nearest millisecond. The deadline is an approximate deadline. Defaults to: `null`.
+  - firstAttempt (Attempt): Output only. The status of the task&#39;s first attempt.  Only dispatch_time will be set. The other Attempt information is not retained by Cloud Tasks. Defaults to: `null`.
+  - lastAttempt (Attempt): Output only. The status of the task&#39;s last attempt. Defaults to: `null`.
+  - name (String.t): Optionally caller-specified in CreateTask.  The task name.  The task name must have the following format: &#x60;projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID&#x60;  * &#x60;PROJECT_ID&#x60; can contain letters ([A-Za-z]), numbers ([0-9]),    hyphens (-), colons (:), or periods (.).    For more information, see    [Identifying    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * &#x60;LOCATION_ID&#x60; is the canonical ID for the task&#39;s location.    The list of available locations can be obtained by calling    ListLocations.    For more information, see https://cloud.google.com/about/locations/. * &#x60;QUEUE_ID&#x60; can contain letters ([A-Za-z]), numbers ([0-9]), or   hyphens (-). The maximum length is 100 characters. * &#x60;TASK_ID&#x60; can contain only letters ([A-Za-z]), numbers ([0-9]),   hyphens (-), or underscores (_). The maximum length is 500 characters. Defaults to: `null`.
+  - responseCount (integer()): Output only. The number of attempts which have received a response. Defaults to: `null`.
+  - scheduleTime (DateTime.t): The time when the task is scheduled to be attempted.  For App Engine queues, this is when the task will be attempted or retried.  &#x60;schedule_time&#x60; will be truncated to the nearest microsecond. Defaults to: `null`.
   - view (String.t): Output only. The view specifies which subset of the Task has been returned. Defaults to: `null`.
     - Enum - one of [VIEW_UNSPECIFIED, BASIC, FULL]
   """
@@ -36,31 +39,37 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Task do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    :"appEngineHttpRequest" => GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpRequest.t(),
-    :"createTime" => any(),
+    :"appEngineHttpRequest" => GoogleApi.CloudTasks.V2.Model.AppEngineHttpRequest.t(),
+    :"createTime" => DateTime.t(),
+    :"dispatchCount" => any(),
+    :"dispatchDeadline" => any(),
+    :"firstAttempt" => GoogleApi.CloudTasks.V2.Model.Attempt.t(),
+    :"lastAttempt" => GoogleApi.CloudTasks.V2.Model.Attempt.t(),
     :"name" => any(),
-    :"pullMessage" => GoogleApi.CloudTasks.V2beta2.Model.PullMessage.t(),
-    :"scheduleTime" => any(),
-    :"status" => GoogleApi.CloudTasks.V2beta2.Model.TaskStatus.t(),
+    :"responseCount" => any(),
+    :"scheduleTime" => DateTime.t(),
     :"view" => any()
   }
 
-  field(:"appEngineHttpRequest", as: GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpRequest)
-  field(:"createTime")
+  field(:"appEngineHttpRequest", as: GoogleApi.CloudTasks.V2.Model.AppEngineHttpRequest)
+  field(:"createTime", as: DateTime)
+  field(:"dispatchCount")
+  field(:"dispatchDeadline")
+  field(:"firstAttempt", as: GoogleApi.CloudTasks.V2.Model.Attempt)
+  field(:"lastAttempt", as: GoogleApi.CloudTasks.V2.Model.Attempt)
   field(:"name")
-  field(:"pullMessage", as: GoogleApi.CloudTasks.V2beta2.Model.PullMessage)
-  field(:"scheduleTime")
-  field(:"status", as: GoogleApi.CloudTasks.V2beta2.Model.TaskStatus)
+  field(:"responseCount")
+  field(:"scheduleTime", as: DateTime)
   field(:"view")
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.Task do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.Task do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.Task.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.Task.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.Task do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.Task do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

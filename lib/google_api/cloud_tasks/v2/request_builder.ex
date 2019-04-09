@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.RequestBuilder do
+defmodule GoogleApi.CloudTasks.V2.RequestBuilder do
   @moduledoc """
   Helper functions for building Tesla requests.
 

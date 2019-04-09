@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.PauseQueueRequest do
+defmodule GoogleApi.CloudTasks.V2.Model.PauseQueueRequest do
   @moduledoc """
   Request message for PauseQueue.
 
@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.PauseQueueRequest do
 
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.PauseQueueRequest do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.PauseQueueRequest do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.PauseQueueRequest.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.PauseQueueRequest.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.PauseQueueRequest do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.PauseQueueRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -1,4 +1,4 @@
-# GoogleApi.CloudTasks.V2beta2
+# GoogleApi.CloudTasks.V2
 
 Manages the execution of large numbers of distributed requests.
 

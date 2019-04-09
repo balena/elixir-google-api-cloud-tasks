@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.Empty do
+defmodule GoogleApi.CloudTasks.V2.Model.Empty do
   @moduledoc """
   A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:      service Foo {       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);     }  The JSON representation for &#x60;Empty&#x60; is empty JSON object &#x60;{}&#x60;.
 
@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Empty do
 
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.Empty do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.Empty do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.Empty.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.Empty.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.Empty do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.Empty do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

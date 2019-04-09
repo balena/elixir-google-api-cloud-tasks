@@ -1,11 +1,11 @@
 ExUnit.start()
 
-defmodule GoogleApi.CloudTasks.V2beta2.TestHelper do
+defmodule GoogleApi.CloudTasks.V2.TestHelper do
 
   defmacro __using__(opts) do
     quote do
       use ExUnit.Case, unquote(opts)
-      import GoogleApi.CloudTasks.V2beta2.TestHelper
+      import GoogleApi.CloudTasks.V2.TestHelper
     end
   end
 

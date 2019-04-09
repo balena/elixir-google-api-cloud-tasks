@@ -17,37 +17,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.Binding do
+defmodule GoogleApi.CloudTasks.V2.Model.Binding do
   @moduledoc """
   Associates &#x60;members&#x60; with a &#x60;role&#x60;.
 
   ## Attributes
 
-  - condition (Expr): Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied condition will not allow user access via current binding. Different bindings, including their conditions, are examined independently. Defaults to: `null`.
-  - members ([String.t]): Specifies the identities requesting access for a Cloud Platform resource. &#x60;members&#x60; can have the following values:  * &#x60;allUsers&#x60;: A special identifier that represents anyone who is    on the internet; with or without a Google account.  * &#x60;allAuthenticatedUsers&#x60;: A special identifier that represents anyone    who is authenticated with a Google account or a service account.  * &#x60;user:{emailid}&#x60;: An email address that represents a specific Google    account. For example, &#x60;alice@gmail.com&#x60; .   * &#x60;serviceAccount:{emailid}&#x60;: An email address that represents a service    account. For example, &#x60;my-other-app@appspot.gserviceaccount.com&#x60;.  * &#x60;group:{emailid}&#x60;: An email address that represents a Google group.    For example, &#x60;admins@example.com&#x60;.   * &#x60;domain:{domain}&#x60;: A Google Apps domain name that represents all the    users of that domain. For example, &#x60;google.com&#x60; or &#x60;example.com&#x60;.   Defaults to: `null`.
+  - condition (Expr): The condition that is associated with this binding. NOTE: an unsatisfied condition will not allow user access via current binding. Different bindings, including their conditions, are examined independently. Defaults to: `null`.
+  - members ([String.t]): Specifies the identities requesting access for a Cloud Platform resource. &#x60;members&#x60; can have the following values:  * &#x60;allUsers&#x60;: A special identifier that represents anyone who is    on the internet; with or without a Google account.  * &#x60;allAuthenticatedUsers&#x60;: A special identifier that represents anyone    who is authenticated with a Google account or a service account.  * &#x60;user:{emailid}&#x60;: An email address that represents a specific Google    account. For example, &#x60;alice@gmail.com&#x60; .   * &#x60;serviceAccount:{emailid}&#x60;: An email address that represents a service    account. For example, &#x60;my-other-app@appspot.gserviceaccount.com&#x60;.  * &#x60;group:{emailid}&#x60;: An email address that represents a Google group.    For example, &#x60;admins@example.com&#x60;.   * &#x60;domain:{domain}&#x60;: The G Suite domain (primary) that represents all the    users of that domain. For example, &#x60;google.com&#x60; or &#x60;example.com&#x60;.   Defaults to: `null`.
   - role (String.t): Role that is assigned to &#x60;members&#x60;. For example, &#x60;roles/viewer&#x60;, &#x60;roles/editor&#x60;, or &#x60;roles/owner&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    :"condition" => GoogleApi.CloudTasks.V2beta2.Model.Expr.t(),
+    :"condition" => GoogleApi.CloudTasks.V2.Model.Expr.t(),
     :"members" => list(any()),
     :"role" => any()
   }
 
-  field(:"condition", as: GoogleApi.CloudTasks.V2beta2.Model.Expr)
+  field(:"condition", as: GoogleApi.CloudTasks.V2.Model.Expr)
   field(:"members", type: :list)
   field(:"role")
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.Binding do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.Binding do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.Binding.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.Binding.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.Binding do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.Binding do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

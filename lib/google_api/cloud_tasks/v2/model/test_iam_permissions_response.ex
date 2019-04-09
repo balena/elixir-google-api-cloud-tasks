@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse do
+defmodule GoogleApi.CloudTasks.V2.Model.TestIamPermissionsResponse do
   @moduledoc """
   Response message for &#x60;TestIamPermissions&#x60; method.
 
@@ -35,13 +35,13 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse do
   field(:"permissions", type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.TestIamPermissionsResponse do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.TestIamPermissionsResponse.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.TestIamPermissionsResponse do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

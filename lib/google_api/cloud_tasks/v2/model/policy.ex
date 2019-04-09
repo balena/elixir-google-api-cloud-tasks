@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.Policy do
+defmodule GoogleApi.CloudTasks.V2.Model.Policy do
   @moduledoc """
   Defines an Identity and Access Management (IAM) policy. It is used to specify access control policies for Cloud Platform resources.   A &#x60;Policy&#x60; consists of a list of &#x60;bindings&#x60;. A &#x60;binding&#x60; binds a list of &#x60;members&#x60; to a &#x60;role&#x60;, where the members can be user accounts, Google groups, Google domains, and service accounts. A &#x60;role&#x60; is a named list of permissions defined by IAM.  **JSON Example**      {       \&quot;bindings\&quot;: [         {           \&quot;role\&quot;: \&quot;roles/owner\&quot;,           \&quot;members\&quot;: [             \&quot;user:mike@example.com\&quot;,             \&quot;group:admins@example.com\&quot;,             \&quot;domain:google.com\&quot;,             \&quot;serviceAccount:my-other-app@appspot.gserviceaccount.com\&quot;           ]         },         {           \&quot;role\&quot;: \&quot;roles/viewer\&quot;,           \&quot;members\&quot;: [\&quot;user:sean@example.com\&quot;]         }       ]     }  **YAML Example**      bindings:     - members:       - user:mike@example.com       - group:admins@example.com       - domain:google.com       - serviceAccount:my-other-app@appspot.gserviceaccount.com       role: roles/owner     - members:       - user:sean@example.com       role: roles/viewer   For a description of IAM and its features, see the [IAM developer&#39;s guide](https://cloud.google.com/iam/docs).
 
@@ -31,23 +31,23 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    :"bindings" => list(GoogleApi.CloudTasks.V2beta2.Model.Binding.t()),
+    :"bindings" => list(GoogleApi.CloudTasks.V2.Model.Binding.t()),
     :"etag" => any(),
     :"version" => any()
   }
 
-  field(:"bindings", as: GoogleApi.CloudTasks.V2beta2.Model.Binding, type: :list)
+  field(:"bindings", as: GoogleApi.CloudTasks.V2.Model.Binding, type: :list)
   field(:"etag")
   field(:"version")
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.Policy do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.Policy do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.Policy.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.Policy.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.Policy do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.Policy do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

@@ -1,4 +1,4 @@
-defmodule GoogleApi.CloudTasks.V2beta2.Mixfile do
+defmodule GoogleApi.CloudTasks.V2.Mixfile do
   use Mix.Project
 
   @version "0.0.1"

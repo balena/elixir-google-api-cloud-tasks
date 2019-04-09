@@ -17,9 +17,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Connection do
+defmodule GoogleApi.CloudTasks.V2.Connection do
   @moduledoc """
-  Handle Tesla connections for GoogleApi.CloudTasks.V2beta2.
+  Handle Tesla connections for GoogleApi.CloudTasks.V2.
   """
 
   use GoogleApi.Gax.Connection, scopes: [

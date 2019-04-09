@@ -17,7 +17,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudTasks.V2beta2.Model.Location do
+defmodule GoogleApi.CloudTasks.V2.Model.Location do
   @moduledoc """
   A resource that represents Google Cloud Platform location.
 
@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Location do
   - displayName (String.t): The friendly name for this location, typically a nearby city name. For example, \&quot;Tokyo\&quot;. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): Cross-service attributes for the location. For example      {\&quot;cloud.googleapis.com/region\&quot;: \&quot;us-east1\&quot;} Defaults to: `null`.
   - locationId (String.t): The canonical id for this location. For example: &#x60;\&quot;us-east1\&quot;&#x60;. Defaults to: `null`.
-  - metadata (Object): Service-specific metadata. For example the available capacity at the given location. Defaults to: `null`.
+  - metadata (%{optional(String.t) &#x3D;&gt; String.t}): Service-specific metadata. For example the available capacity at the given location. Defaults to: `null`.
   - name (String.t): Resource name for the location, which may vary between implementations. For example: &#x60;\&quot;projects/example-project/locations/us-east1\&quot;&#x60; Defaults to: `null`.
   """
 
@@ -36,24 +36,24 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Location do
     :"displayName" => any(),
     :"labels" => map(),
     :"locationId" => any(),
-    :"metadata" => GoogleApi.CloudTasks.V2beta2.Model.Object.t(),
+    :"metadata" => map(),
     :"name" => any()
   }
 
   field(:"displayName")
   field(:"labels", type: :map)
   field(:"locationId")
-  field(:"metadata", as: GoogleApi.CloudTasks.V2beta2.Model.Object)
+  field(:"metadata", type: :map)
   field(:"name")
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.Location do
+defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2.Model.Location do
   def decode(value, options) do
-    GoogleApi.CloudTasks.V2beta2.Model.Location.decode(value, options)
+    GoogleApi.CloudTasks.V2.Model.Location.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2beta2.Model.Location do
+defimpl Poison.Encoder, for: GoogleApi.CloudTasks.V2.Model.Location do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
