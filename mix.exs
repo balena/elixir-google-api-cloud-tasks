@@ -40,8 +40,7 @@ defmodule GoogleApi.CloudTasks.Mixfile do
 
   defp deps() do
     [
-      {:google_gax, "~> 0.2"},
-
+      {:google_gax, github: "balena/elixir-google-gax"},
       {:ex_doc, "~> 0.16", only: :dev}
     ]
   end
